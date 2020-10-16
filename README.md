@@ -1,4 +1,4 @@
-# p1_andre_isola_coutinho_
+# P1 - André Isola Coutinho
 
 A new Flutter project.
 
