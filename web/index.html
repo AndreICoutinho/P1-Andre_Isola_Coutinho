@@ -18,6 +18,31 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDe5SWzKS_4OntYLEwS3STRrqJVJO2VBW8",
+    authDomain: "motoboy-expresso.firebaseapp.com",
+    databaseURL: "https://motoboy-expresso.firebaseio.com",
+    projectId: "motoboy-expresso",
+    storageBucket: "motoboy-expresso.appspot.com",
+    messagingSenderId: "741475805918",
+    appId: "1:741475805918:web:8682e2b98ef6ad177cf04f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->

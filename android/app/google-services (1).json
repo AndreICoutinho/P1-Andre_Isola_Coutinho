@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "741475805918",
+    "firebase_url": "https://motoboy-expresso.firebaseio.com",
+    "project_id": "motoboy-expresso",
+    "storage_bucket": "motoboy-expresso.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741475805918:android:287001a748d1c7c47cf04f",
+        "android_client_info": {
+          "package_name": "com.example.p1_andre_isola_coutinho_"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741475805918-n96l9lvecr552fjgu670qsrdgskjpjle.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_hrJknxsLlspOKmeFjaq1KNTAZZ956-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741475805918-n96l9lvecr552fjgu670qsrdgskjpjle.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
