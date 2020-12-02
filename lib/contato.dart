@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Contato extends StatefulWidget {
@@ -15,6 +16,7 @@ class _ContatoState extends State<Contato> {
   var txtAssunto = TextEditingController();
   var txtMensagem = TextEditingController();
 
+var db = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -157,7 +159,33 @@ class _ContatoState extends State<Contato> {
         //
         // Evento ocorrerá quando o usuário clicar no botão
         //
-        onPressed: () {
+        onPressed: () async{
+
+          await db.collection("Faleconosco").add(
+          {
+            "Assunto": txtAssunto.text,
+            "Mensagem": txtMensagem.text,
+          }  
+          );
+          /*if (id == null) {
+            await db.collection("Fale Conosco").add(
+              {
+                "Assunto": txtAssunto.text,
+                "Mensagem": txtMensagem.text,
+              }
+            );
+          }else{
+          await db.collection("Fale Conosco").doc(id).update(
+            {
+              "Assunto": txtAssunto.text,
+              "Mensagem": txtMensagem.text,
+            }
+          );
+          }
+          */
+      
+            
+                   
           Navigator.pushNamed(context, rota);
         },
 

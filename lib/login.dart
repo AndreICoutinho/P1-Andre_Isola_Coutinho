@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class TelaLogin extends StatefulWidget {
@@ -15,6 +16,7 @@ class _TelaLoginState extends State<TelaLogin> {
   var txtlogin = TextEditingController();
   var txtSenha = TextEditingController();
 
+   var db = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -139,13 +141,21 @@ class _TelaLoginState extends State<TelaLogin> {
         //
         // Evento ocorrerá quando o usuário clicar no botão
         //
-        onPressed: (){
+       onPressed: () async {
+
+          await db.collection("usuarios").add(
+          {
+           "login": txtlogin.text,
+            "senha": txtSenha.text,
+           }  
+          );
+
           //validator.
           if (formKey.currentState.validate()){
 
 
             setState(() {
-              if (txtlogin.text == 'andre' ){
+              if (txtlogin.text == 'andre@andre.com.br' ){
                 if(txtSenha.text == 'andre'){
                   Navigator.pushNamed(context, '/Menu');
                   caixaDialogo(

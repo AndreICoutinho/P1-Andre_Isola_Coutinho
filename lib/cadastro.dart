@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 enum TipoPessoa { fisica, juridica }
@@ -22,6 +23,8 @@ class _CadastroState extends State<Cadastro> {
   var txtTelefone = TextEditingController();
   var txtSenha = TextEditingController();
 
+  var db = FirebaseFirestore.instance;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -180,7 +183,23 @@ class _CadastroState extends State<Cadastro> {
               ],
             ),
         color: Theme.of(context).primaryColor,
-        onPressed: () {
+        onPressed: () async {
+          
+             await db.collection("cadastros").add(
+          {
+            "Razao Social": txtNomeRazaoSocial.text,
+            "Nome Fantasia": txtNomeFantasia.text,
+            "CNPJ": txtCpfCnpj,
+            "Endereço": txtEndereco,
+            "Complemento": txtComplemento,
+            "Email": txtEmail,
+            "Telefone": txtTelefone,
+            "Senha": txtSenha,
+           
+          }  
+           
+          );
+           
           caixaDialogo("Cadastrado com sucesso");
         }),
           
@@ -198,7 +217,7 @@ class _CadastroState extends State<Cadastro> {
             content: Text(msg, style:TextStyle(fontSize: 24)),
             actions: [
               FlatButton(
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child: Text('fechar')
